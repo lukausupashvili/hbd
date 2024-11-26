@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 დაბადების დღის მილოცვა 🎂</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3.5em;
+            color: #e63946;
+            margin: 20px 0;
+            text-shadow: 2px 2px #f1faee;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 20px;
+            display: inline-block;
+            padding: 15px 30px;
+            background: #457b9d;
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+        a:hover {
+            background: #1d3557;
+        }
+        .photo-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .photo-container img {
+            max-width: 300px;
+            border: 4px solid #e63946;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="page1">
+        <h1>🎉 გილოცავთ დაბადების დღეს! 🎉</h1>
+        <p>ძვირფასო ძმებო გილოცავთ თქვენ დღეს ვიცი რო შეილება გეწყინათ მთელი დღე რო დაბადების დღეს არ მოგილოცეთ მარა სუპრიზად ამას გიმზადებდით და ეს პატარა საჩუქარი ჩემგან</p>
+        <p>გისურვებთ სიყვარულსა და წარმატებას წინსვლას ცხოვრებაში</p>
+        <a href="#page2" id="play-audio-btn">📸 გადადი ფოტოებზე და სიმღერაზე 🎵</a>
+    </div>
+
+   
+    <div id="page2" style="display: none;">
+        <h1>📸 ბედნიერი მომენტები 📸</h1>
+        <div class="photo-container">
+            <img src=c:\Users\User\Pictures\bday.PNG alt="ფოტო 1">
+            <img src=c:\Users\User\Desktop\465890807_8782420411779207_8392405196026217931_n.jpg alt="ფოტო 2">
+            <img src=c:\Users\User\Desktop\464798575_8558378310915641_1654419297232457515_n.jpg alt="ფოტო 3">
+        </div>
+        <h2>🎵 თქვენი სიმღერა 🎵</h2>
+        <audio id="birthday-audio" controls>
+            <source src=c:\Users\User\Downloads\gela-gnolize-gamis-shous-bendi-dabadebis-dge-128-ytshorts.savetube.me.mp3 type="audio/mpeg"> 
+           
+        </audio>
+        <p>სიმღერის სახელი: <strong>Happy Birthday </strong></p> 
+        <a href="#page1">🔙 დაბრუნდი მისალოც გვერდზე</a>
+    </div>
+
+    <footer>
+        შექმნილია ❤️-ით და სიხარულით!
+    </footer>
+
+    <script>
+        
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetPage = link.getAttribute('href');
+                
+              
+                document.getElementById('page1').style.display = 'none';
+                document.getElementById('page2').style.display = 'none';
+
+             
+                if (targetPage === '#page1') {
+                    document.getElementById('page1').style.display = 'block';
+                } else if (targetPage === '#page2') {
+                    document.getElementById('page2').style.display = 'block';
+                }
+            });
+        });
+
+     
+        document.getElementById('play-audio-btn').addEventListener('click', function() {
+            const audio = document.getElementById('birthday-audio');
+            audio.play().catch(error => {
+                console.log("აუდიოს ავტომატური ჩართვა ბლოკირებულია:", error);
+            });
+        });
+    </script>
+</body>
+</html>
